@@ -1,6 +1,6 @@
 # porada-schulungen.eu – statische Startseite (Relaunch-Entwurf)
 
-Einzelne **Single-Page**-`index.html` mit Anker-Navigation für Word, Excel, PowerPoint und Teams. Styling in `styles.css`, Verhalten (Menü, Scroll, Sichtbarkeit) in `script.js`. Die **CI-Extraktion** von der bisherigen Live-Seite steht in `CI-ANALYSE.md`.
+Einzelne **Single-Page**-`index.html` mit Anker-Navigation für Word, EXXCELL, PowerPoint und Teams. Styling in `styles.css`, Verhalten (Menü, Scroll, Sichtbarkeit) in `script.js`. Die **CI-Extraktion** von der bisherigen Live-Seite steht in `CI-ANALYSE.md`.
 
 ## Technische Entscheidungen
 
