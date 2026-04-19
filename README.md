@@ -29,4 +29,4 @@ Scores hängen von Umgebung (localhost vs. HTTPS) und Fonts ab. Für produktive 
 
 ## Übergabe (Repo)
 
-Dieser Ordner ist ein **eigenständiges Git-Repository** mit Remote `git@github.com:peerendees/poradaa.git`. Nach dem Klonen liegst du auf `main`; `git push -u origin main` setzt du lokal fort, sobald SSH-Zugriff auf GitHub eingerichtet ist.
+Pfad: **`…/projekte/poradaa`** (nicht unter `berentai`). Eigenständiges Git-Repository mit Remote `git@github.com:peerendees/poradaa.git`. Schrittfolge für Commit und Push: siehe **`UEBERGABE.md`**.
