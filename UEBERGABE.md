@@ -1,5 +1,7 @@
 # Übergabe – Projekt Porada (porada-schulungen Relaunch)
 
+> **Dateiname im Repo:** `UEBERGABE.md` (ASCII). Gemeint ist dieselbe „Übergabe“-Datei.
+
 Diese Datei ist für den **nächsten Chat** gedacht: Commit- und Push-Stand prüfen, bei Bedarf nachziehen, dann zu GitHub pushen.
 
 ## Projektpfad (lokal) – verbindlich
@@ -60,9 +62,10 @@ git pull origin main --allow-unrelated-histories
 git push -u origin main
 ```
 
-Wenn das Remote-Repo **leer** ist:
+Wenn das Remote-Repo **leer** ist (Standard nach leerem GitHub-Repo):
 
 ```bash
+cd /Users/kunkel/Entwicklung/projekte/poradaa
 git push -u origin main
 ```
 
@@ -76,6 +79,40 @@ Bei `Host key verification failed`:
 ## Inhaltliche Nacharbeit (nicht Teil des Push)
 
 Siehe `README.md` und `CI-ANALYSE.md`: Portrait, Logo, Kontaktdaten, `mailto`, Footer-URLs gegen die Live-Seite prüfen.
+
+## Vorschau: Blog (`projekte/blog`) und Porada im Editor-Browser (Cursor)
+
+Der **BERENT-Blog** liegt **nebendran** im Workspace, nicht im `poradaa`-Repo:
+
+```
+/Users/kunkel/Entwicklung/projekte/blog/index.html
+```
+
+`blog/index.html` verlinkt **Wurzelpfade** (`/css/…`, `/assets/…`). Deshalb **nicht** zuverlässig per `file://` testen — kurz einen **HTTP-Server im Ordner `blog`** starten und die Seite im eingebetteten Browser öffnen.
+
+### Schritte
+
+1. **Blog-Server** (eigenes Terminal, Arbeitsverzeichnis `blog`):
+
+   ```bash
+   cd /Users/kunkel/Entwicklung/projekte/blog
+   python3 -m http.server 8787
+   ```
+
+2. **Porada-Server** (zweites Terminal, Arbeitsverzeichnis `poradaa`):
+
+   ```bash
+   cd /Users/kunkel/Entwicklung/projekte/poradaa
+   python3 -m http.server 8788
+   ```
+
+3. **Editor-Browser in Cursor:** Befehlspalette (**Cmd+Shift+P**) → **„Simple Browser: Show"** (oder je nach Version **„Browser: Open"** / integrierter Browser).  
+   - Blog: `http://127.0.0.1:8787/` bzw. `http://127.0.0.1:8787/index.html`  
+   - Porada-Startseite: `http://127.0.0.1:8788/` bzw. `http://127.0.0.1:8788/index.html`  
+
+   Optional zweites Simple-Browser-Panel für die jeweils andere URL.
+
+4. **Einstellung (Cursor/VS Code):** z. B. `workbench.browser.openLocalhostLinks` (Links zu `localhost` im Editor-Browser) und ggf. `simpleBrowser.useIntegratedBrowser` — siehe aktuelle Dokumentation zu *Simple Browser* / *Integrated Browser*.
 
 ---
 
